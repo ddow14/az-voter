@@ -37,7 +37,7 @@ const arcPath = d3.arc()
                 .outerRadius(radius)
                 .innerRadius(0)
 
-d3.csv("cds.csv").then(function(data) {
+d3.csv("https://combinatronics.com/ddow14/az-voter/main/cds.csv").then(function(data) {
 // set the color scale
 
 // set the color scale
