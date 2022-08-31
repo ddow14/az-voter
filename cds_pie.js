@@ -1,14 +1,13 @@
 // set the dimensions and margins of the graph
-var width = 450
-    height = 450
-    margin = 40
+// var width = 450
+//    height = 450
+//    margin = 40
 
 var radius = Math.min(width, height) / 2 - margin
 
 var svg = d3.select("#pie")
   .append("svg")
-    .attr("width", width)
-    .attr("height", height)
+    .attr("height", 450)
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -26,6 +25,25 @@ var tip = d3.tip()
         ;
     })
 
+var Svg = d3.select("#pie")
+  .append("svg")
+  .attr("height", 200)
+
+// A function that finishes to draw the chart for a specific device size.
+function drawChart() {
+
+  // get the current width of the div where the chart appear, and attribute it to Svg
+  currentWidth = parseInt(d3.select('#pie').style('width'), 10)
+  Svg.attr("width", currentWidth)
+
+  // Update the X scale and Axis (here the 20 is just to have a bit of margin)
+  x.range([ 20, currentWidth-20 ]);
+  xAxis.call(d3.axisBottom(x))
+
+  // Add the last information needed for the circles: their X position
+  myCircles
+    .attr("cx", function(d){ return x(d)})
+  }
 
 svg.call(tip);
 
@@ -105,3 +123,9 @@ const arcAnimation = (d) => {
         return arcPath(d);
     }
 }
+
+// Initialize the chart
+drawChart()
+
+// Add an event listener that run the function when dimension change
+window.addEventListener('resize', drawChart );
