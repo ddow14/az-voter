@@ -3,6 +3,13 @@ function drawChart() {
 // get the current width of the div where the chart appear, and attribute it to Svg
   currentWidth = parseInt(d3.select('#pie').style('width'), 10)
   Svg.attr("width", currentWidth)
+}
+
+// Initialize the chart
+drawChart()
+
+// Add an event listener that run the function when dimension change
+window.addEventListener('resize', drawChart );
 
 // set the dimensions and margins of the graph
 var width = currentWidth
