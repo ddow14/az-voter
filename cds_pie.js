@@ -6,11 +6,10 @@ function drawChart() {
 // get the current width of the div where the chart appear, and attribute it to svg
   currentWidth = parseInt(d3.select('#pie').style('width'), 10)
   svg.attr("width", currentWidth)
-    
-// set the dimensions and margins of the graph based on currentWidth
-var width = currentWidth
-    height = currentWidth
-    margin = 40
+  
+// get the current width of the div where the chart appear, and attribute it to svg
+  currentHeight = parseInt(d3.select('#pie').style('height'), 10)
+  svg.attr("height", currentHeight)
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
 var radius = Math.min(width, height) / 2 - margin
