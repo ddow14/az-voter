@@ -3,11 +3,16 @@ var width = 450
     height = 450
     margin = 40
 
+// The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
 var radius = Math.min(width, height) / 2 - margin
 
+// append the svg object to the div called 'my_dataviz'
 var svg = d3.select("#pie")
   .append("svg")
-    .attr("height", 450)
+    .attr("width", '100%')
+    .attr("height", '100%')
+    .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
+    .attr('preserveAspectRatio','xMinYMin')
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -25,6 +30,7 @@ var tip = d3.tip()
         ;
     })
 
+
 svg.call(tip);
 
 var formatComma = d3.format(",");
@@ -35,7 +41,7 @@ const arcPath = d3.arc()
                 .outerRadius(radius)
                 .innerRadius(0)
 
-d3.csv("cds.csv").then(function(data) {
+d3.csv("pie/cds.csv").then(function(data) {
 // set the color scale
 
 // set the color scale
@@ -55,6 +61,7 @@ var data_ready = pie(d3.entries(data))
 var arcGenerator = d3.arc()
   .innerRadius(0)
   .outerRadius(radius)
+// Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
 svg
   .selectAll('Slices')
   .data(data_ready)
@@ -103,25 +110,3 @@ const arcAnimation = (d) => {
         return arcPath(d);
     }
 }
-
-// A function that finishes to draw the chart for a specific device size.
-function drawChart() {
-
-  // get the current width of the div where the chart appear, and attribute it to Svg
-  currentWidth = parseInt(d3.select('#pie').style('width'), 10)
-  Svg.attr("width", currentWidth)
-
-  // Update the X scale and Axis (here the 20 is just to have a bit of margin)
-  x.range([ 20, currentWidth-20 ]);
-  xAxis.call(d3.axisBottom(x))
-
-  // Add the last information needed for the circles: their X position
-  myCircles
-    .attr("cx", function(d){ return x(d)})
-  }
-
-// Initialize the chart
-drawChart()
-
-// Add an event listener that run the function when dimension change
-window.addEventListener('resize', drawChart );
