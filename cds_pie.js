@@ -1,7 +1,4 @@
 
-var svg = d3.select("#pie")
-  .append("svg")
-
 function drawChart() {
 // get the current width of the div where the chart appear, and attribute it to svg
   currentWidth = parseInt(d3.select('#pie').style('width'), 10)
