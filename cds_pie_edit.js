@@ -1,10 +1,7 @@
 // set the dimensions and margins of the graph
-var width = 100%
-    height = 100%
-    margin = 40
-
-// The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-var radius = Math.min(width, height) / 2 - margin
+// var width = 450
+//    height = 450
+var margin = 40
 
 // append the svg object to the div called 'my_dataviz'
 var svg = d3.select("#pie")
@@ -15,6 +12,9 @@ var svg = d3.select("#pie")
     .attr('preserveAspectRatio','xMinYMin')
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+// The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+var radius = Math.min(width, height) / 2 - margin
 
 var tip = d3.tip()
     .attr("class", "d3-tip")
