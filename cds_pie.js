@@ -20,7 +20,7 @@ window.addEventListener('resize', drawChart );
 
 // define height and width 
 var width = currentWidth
-    height = currentHeight
+    height = currentWidth
     margin = 40 
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
