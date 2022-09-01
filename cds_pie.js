@@ -1,3 +1,4 @@
+// create svg
 var svg = d3.select("#pie")
 
 function drawChart() {
