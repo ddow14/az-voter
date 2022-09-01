@@ -1,7 +1,7 @@
-// set the dimensions and margins of the graph
-// var width = 450
-//    height = 450
-var margin = 40
+// set the initial dimensions and margins of the graph
+var width = 450
+    height = 450
+    margin = 40
 
 // append the svg object to the div called 'my_dataviz'
 var svg = d3.select("#pie")
