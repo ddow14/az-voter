@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
-var width = 450
-    height = 450
+var width = 100%
+    height = 100%
     margin = 40
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
@@ -41,7 +41,7 @@ const arcPath = d3.arc()
                 .outerRadius(radius)
                 .innerRadius(0)
 
-d3.csv("pie/cds.csv").then(function(data) {
+d3.csv("cds.csv").then(function(data) {
 // set the color scale
 
 // set the color scale
