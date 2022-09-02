@@ -23,8 +23,8 @@ var maxwidth = 450
 
 
 // define height and width 
-var width = Math.min(currentWidth,maxwidth)
-    height = Math.min(currentWidth,maxwidth)
+var width = 450
+    height = 450
     margin = 40 
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
@@ -33,8 +33,8 @@ var radius = Math.min(width, height) / 2 - margin
 // append the svg object to the div called 'pie' with new width and height?
 var svg = d3.select("#pie")
   .append("svg")
-    .attr("width", '100%')
-    .attr("height", '100%')
+    //.attr("width", '100%')
+    //.attr("height", '100%')
     .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
     .attr('preserveAspectRatio','xMinYMin')
   .append("g")
