@@ -17,9 +17,14 @@ drawChart()
 // Add an event listener that run the function when dimension change
 window.addEventListener('resize', drawChart );
 
+
 // define height and width 
-var width = currentWidth
-    height = currentWidth
+var maxwidth = 450
+
+
+// define height and width 
+var width = Math.min(currentWidth,maxwidth)
+    height = Math.min(currentWidth,maxwidth)
     margin = 40 
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
