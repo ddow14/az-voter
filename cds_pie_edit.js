@@ -1,6 +1,6 @@
 // set the initial dimensions and margins of the graph
-var  width = 0
-     height = 0
+var  width = 100
+     height = 100
      margin = 20
 
 // append the svg object to the div called 'my_dataviz'
