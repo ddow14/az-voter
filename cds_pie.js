@@ -19,11 +19,10 @@ window.addEventListener('resize', drawChart );
 
 
 // define height and width 
-var maxwidth = 450
-
+// var maxwidth = 450
 
 // define height and width 
-var width = 450
+var width = currentwidth
     height = 450
     margin = 40 
 
@@ -33,8 +32,8 @@ var radius = Math.min(width, height) / 2 - margin
 // append the svg object to the div called 'pie' with new width and height?
 var svg = d3.select("#pie")
   .append("svg")
-    //.attr("width", '100%')
-    //.attr("height", '100%')
+    .attr("width", '100%')
+    .attr("height", '100%')
     .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
     .attr('preserveAspectRatio','xMinYMin')
   .append("g")
