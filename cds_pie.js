@@ -22,8 +22,8 @@ window.addEventListener('resize', drawChart );
 // var maxwidth = 450
 
 // define height and width 
-var width = currentWidth - 100
-    height = currentWidth - 100
+var width = currentWidth
+    height = currentWidth
     margin = 40 
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
@@ -32,7 +32,7 @@ var radius = Math.min(width, height) / 2 - margin
 // append the svg object to the div called 'pie' with new width and height?
 var svg = d3.select("#pie")
   .append("svg")
-    .style('max-width', '200')
+    .style('max-width', '450')
     .style('height', 'auto')
     .attr("width", '100%')
     .attr("height", '100%')
