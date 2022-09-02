@@ -22,7 +22,7 @@ window.addEventListener('resize', drawChart );
 // var maxwidth = 450
 
 // define height and width 
-var width = currentwidth
+var width = currentWidth
     height = 450
     margin = 40 
 
