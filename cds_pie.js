@@ -33,7 +33,7 @@ var radius = Math.min(width, height) / 2 - margin
 var svg = d3.select("#pie")
   .append("svg")
     .attr("width", '100%')
-    //.attr("height", '100%')
+    .attr("height", '100%')
     .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
     .attr('preserveAspectRatio','xMinYMin')
   .append("g")
