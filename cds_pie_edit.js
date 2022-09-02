@@ -1,17 +1,14 @@
 // set the initial dimensions and margins of the graph
 var width = 300
     height = 300
-    maxwidth = 300
-    margin = 40
+    margin = 60
 
 // append the svg object to the div called 'my_dataviz'
 var svg = d3.select("#pie")
   .append("svg")
     .attr("width", '100%')
     .attr("height", '100%')
-    .attr("maxwidth", '300')
-    .attr("maxheight", '300')
-    .attr('viewBox','0 0 '+Math.min(width,maxwidth)+' '+Math.min(width,maxwidth))
+    .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
     .attr('preserveAspectRatio','xMinYMin')
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
