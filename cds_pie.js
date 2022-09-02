@@ -32,7 +32,7 @@ var radius = Math.min(width, height) / 2 - margin
 // append the svg object to the div called 'pie' with new width and height?
 var svg = d3.select("#pie")
   .append("svg")
-    .style('max-width', '100%')
+    .style('max-width', '200')
     .style('height', 'auto')
     .attr("width", '100%')
     .attr("height", '100%')
